@@ -1,0 +1,24 @@
+{
+  "name": "rinstagrambot",
+  "version": "1.0.0",
+  "description": "Bot for Instagram",
+  "main": "job.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rancoud/RInstagramBot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rancoud/RInstagramBot/issues"
+  },
+  "homepage": "https://github.com/rancoud/RInstagramBot#readme",
+  "devDependencies": {
+    "colors": "^1.1.2",
+    "instagram-node": "^0.5.8",
+    "npmlog": "^2.0.0"
+  }
+}
