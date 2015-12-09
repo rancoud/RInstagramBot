@@ -83,19 +83,19 @@ if(job.length < 1) {
   process.exit(9);
 }
 
-// get twitter app configurations and Twitter module
-confInstagramApp = require('./conf.twitter.app.js');
+// get Instagram app configurations
+confInstagramApp = require('./conf.instagram.app.js');
 
 // check confInstagramApp > not empty AND no duplicate name
-if(confInstagramApp.length === 0) {
-  log.error('RInstagramBot', 'File conf.twitter.app.js is empty');
+/*if(confInstagramApp.length === 0) {
+  log.error('RInstagramBot', 'File conf.instagram.app.js is empty');
   process.exit(1);
 }
 var _names = [];
 var ready = confInstagramApp.length;
 for (var i = 0; i < confInstagramApp.length; i++) {
   if(_names.indexOf(confInstagramApp[i].name) !== -1) {
-    log.error('RInstagramBot', 'Duplicate names in file conf.twitter.app.js');
+    log.error('RInstagramBot', 'Duplicate names in file conf.instagram.app.js');
     process.exit(1);
   }
   _names.push(confInstagramApp[i].name);
@@ -104,7 +104,7 @@ for (var i = 0; i < confInstagramApp.length; i++) {
   var _json = getRateLimitByName(confInstagramApp[i].name);
   if(_json === null) {
     log.info('RInstagramBot', 'Update rate_limit_cache json for %s', confInstagramApp[i].name);
-    getClientRateLimit(new RTwitter(confInstagramApp[i]), function(name) {
+    getClientRateLimit(new RInstagram(confInstagramApp[i]), function(name) {
       return function(json) {
         saveRateLimitByName(name, JSON.stringify(json));
 
@@ -122,7 +122,8 @@ for (var i = 0; i < confInstagramApp.length; i++) {
     }
   }
 }
-
+*/
+doJob();
 function doJob() {
   log.info('RInstagramBot', 'Search Job: %s', job);
   // search job in private folder jobs
