@@ -21,7 +21,7 @@ process.on('exit', function() {
   log.info('RInstagramBot', 'End');
   // remove process pid
   try {
-    fs.unlinkSync('./pids/' + process.pid + '.pid');
+    fs.unlinkSync(__dirname + '/pids/' + process.pid + '.pid');
   } catch (e) {
     //
   }
@@ -84,7 +84,7 @@ if(job.length < 1) {
 }
 
 // get Instagram app configurations
-confInstagramApp = require('./conf.instagram.app.js');
+confInstagramApp = require(__dirname + '/conf.instagram.app.js');
 
 // check confInstagramApp > not empty AND no duplicate name
 /*if(confInstagramApp.length === 0) {
@@ -127,15 +127,15 @@ doJob();
 function doJob() {
   log.info('RInstagramBot', 'Search Job: %s', job);
   // search job in private folder jobs
-  fs.readdir('./private_jobs', function(err, files) {
+  fs.readdir(__dirname + '/private_jobs', function(err, files) {
     var f, l = files.length, found = false;
     for (var i = 0; i < l; i++) {
       if (files[i] === job + '.js') {
         // save pid
-        fs.writeFileSync('./pids/' + process.pid + '.pid', job + ' ' + options.join(' '), 'utf-8');
+        fs.writeFileSync(__dirname + '/pids/' + process.pid + '.pid', job + ' ' + options.join(' '), 'utf-8');
         log.info('RInstagramBot', 'Load job file: %s', files[i]);
         found = true;
-        require('./private_jobs/' + files[i]);
+        require(__dirname + '/private_jobs/' + files[i]);
         break;
       }
     }
@@ -145,15 +145,15 @@ function doJob() {
     }
 
     // search job in folder jobs
-    fs.readdir('./jobs', function(err, files) {
+    fs.readdir(__dirname + '/jobs', function(err, files) {
       var f, l = files.length, found = false;
       for (var i = 0; i < l; i++) {
         if (files[i] === job + '.js') {
           // save pid
-          fs.writeFileSync('./pids/' + process.pid + '.pid', job + ' ' + options.join(' '), 'utf-8');
+          fs.writeFileSync(__dirname + '/pids/' + process.pid + '.pid', job + ' ' + options.join(' '), 'utf-8');
           log.info('RInstagramBot', 'Load job file: %s', files[i]);
           found = true;
-          require('./jobs/' + files[i]);
+          require(__dirname + '/jobs/' + files[i]);
           break;
         }
       }
