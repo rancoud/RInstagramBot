@@ -1,3 +1,11 @@
+# Instagram API is dead
+If you think it will be easy to use Instagram API you are a fool!  
+Lot of process to review your application.  
+Lot of constraints.  
+In sandbox mode you will have only access to your user and his data.  
+So a lot of endpoint won't work as expected in documentation.  
+**Currently I will try to get all permission for this works, BUT if I can't I will stop developpement for this dead API**
+
 # RInstagramBot
 Bot for Instagram
 
