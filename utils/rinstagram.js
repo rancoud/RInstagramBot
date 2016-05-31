@@ -30,6 +30,10 @@ RInstagram.prototype.tag_media_recent = function (tag, options, callback) {
   this.client.tag_media_recent(tag, options, callback);
 };
 
+RInstagram.prototype.user_media_recent = function (user, options, callback) {
+  this.client.user_media_recent(user, options, callback);
+};
+
 RInstagram.prototype.user_details = function (callback) {
   var that = this;
 

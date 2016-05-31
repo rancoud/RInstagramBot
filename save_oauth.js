@@ -99,7 +99,7 @@ server = http.createServer(function (req, res) {
       }
     });
     return;
-    
+
     client.resetAccessToken();
 
     client.authenticate(query.oauth_token, authData.oauth_token_secret, query.oauth_verifier, function(accessToken) {
